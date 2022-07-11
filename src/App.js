@@ -1,25 +1,30 @@
-import logo from './logo.svg';
-import './App.css';
+import React, { useState } from "react";
+import "./App.css"
+import Board from "./components/Board";
+import Modal from './components/Modal';
+import AddFormContainer from './components/AddFormContainer';
+import { mockData, initialIssue } from "./consts/mocks";
 
-function App() {
+
+export default function App() {
+  const [data, setData] = useState(mockData)
+  const [showModal, setShowModal] = useState(false)
+
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+      <div className="App">
+        <p>{`click to add new issue >  `}</p>
+        <div className="plus" onClick={() => setShowModal(true)}>
+          +
+        </div>
+        <Modal active={showModal} setActive={setShowModal}>
+          <AddFormContainer
+            data={data}
+            setData={setData}
+            setShowModal={setShowModal}
+            initialIssue={initialIssue}
+          />
+        </Modal>
+        <Board data={data} setData={setData} />
+      </div>
   );
 }
-
-export default App;
