@@ -77,7 +77,6 @@ export default function Board({data, setData}) {
               data={data}
               setData={setData}
               section={section}
-              // draggable={true}
               dragStartHandler={dragStartHandler}
               dropHandler={dropHandler}
             />
