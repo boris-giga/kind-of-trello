@@ -1,6 +1,23 @@
-# Getting Started with Create React App
+# DESCRIPTION
+A simple Board with 2 Columns: In progress and Done. User can add custom Issue (Todo) with Title and Description, edit it and remove. 
+Also implemented ability to reorder existing Issues and to drag them between Columns.
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+# Flow
+* To add new Issue, click `+` button on the left from Columns, then Modal will appear. 
+* Fill in corresponding fields
+* Click `save` button, created Issue will appear in `In progress` column
+* Click "&#9776;" button to expand Issue and view it's description
+* Click "&#9998;" button to edit Issue, then `save` or `cancel` for corresponding actions
+* When Issue is done, grab it and drag to `Done`
+* Click "&#10006;" button on expanded Issue to remove if it is no longer needed
+
+# Stack and Technologies
+React with functional components, Synthetic Events, no additional libs
+
+# TODO
+* Add smooth animation for reordering/removing issues
+* Improve Dragging process on expanded Issue
+* REFACTOR CODE
 
 ## Available Scripts
 
@@ -39,11 +56,9 @@ Instead, it will copy all the configuration files and the transitive dependencie
 
 You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
 
-## Learn More
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
 
-To learn React, check out the [React documentation](https://reactjs.org/).
+
 
 ### Code Splitting
 
